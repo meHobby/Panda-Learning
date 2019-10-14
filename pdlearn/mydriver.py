@@ -156,10 +156,10 @@ class Mydriver:
     def quit(self):
         self.driver.quit()
     def send_captcha_ocr(self,base64):
-        url = '端口URL'
+        url = 'https://302307.market.alicloudapi.com/ocr/captcha'
         dict = {'image': base64,'type': '1001','length':4,}
         data = urllib.parse.urlencode(dict).encode('utf-8')
-        headers={'Authorization':'密钥','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'};#(请求headers头有一些供应商是key)
+        headers={'Authorization':'50e65e244c4b46b99440d4ba93bf0f8e','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'};#(请求headers头有一些供应商是key)
         request = urllib.request.Request(url = url,data = data,headers = headers,method = 'POST')
         response = urllib.request.urlopen(request)
         content = response.read()
